@@ -28,7 +28,13 @@ $$
 P(Y = k \mid \mathbf{x}_{ij}), \quad k \in {0,1,2}
 $$
 
-donde ( \mathbf{x}_{ij} \in \mathbb{R}^d ) es el vector de características del partido.
+donde: 
+
+$$ 
+\mathbf{x}_{ij} \in \mathbb{R}^d 
+$$
+
+es el vector de características del partido.
 
 ---
 
