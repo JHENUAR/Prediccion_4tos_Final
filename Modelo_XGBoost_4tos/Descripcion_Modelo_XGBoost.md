@@ -41,8 +41,8 @@ Todos los datos necesarios se encuentran en la carpeta `Data/` dentro de este re
 ### 1. Clonar el repositorio
 
 ```bash
-git clone https://github.com/tu-usuario/mundial-prediccion-cuartos.git
-cd mundial-prediccion-cuartos
+git clone https://github.com/JHENUAR/Prediccion_4tos_Final.git
+cd Prediccion_4tos_Final
 ```
 
 ### 2. Crear entorno virtual (opcional)
@@ -80,7 +80,7 @@ joblib>=1.1.0
 ## 🚀 Ejecución del Modelo
 
 ```bash
-python prediccion_cuartos.py
+python Codigo_Modelo_XGBoost.py
 ```
 
 ### ¿Qué ocurre al ejecutarlo?
