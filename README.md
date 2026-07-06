@@ -204,8 +204,8 @@ $$ \text{LogLoss} = -\frac{1}{N} \sum_{i=1}^{N} \log\left(P(Y = y_i \mid \mathbf
 ### Instalación
 
 ```bash
-git clone https://github.com/tu-usuario/mundial-Prediccion_4tos_final.git
-cd mundial-prediccion-cuartos
+git clone https://github.com/JHENUAR/Prediccion_4tos_Final.git
+cd Prediccion_4tos_Final
 pip install -r requirements.txt
 ```
 
