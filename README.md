@@ -53,33 +53,16 @@ $$
 \Delta f = f_{local} - f_{visitante}
 $$
 
+---
 #### Variables derivadas
 
-* **Ratio goles/posesión**
-
-$$
-\text{ratio_goles_posesion} = \frac{\text{goles totales}}{\text{posesión} + 0.01}
-$$
-
-* **Ratio tarjetas/faltas**
-
-$$
-\text{ratio_tarjetas} = \frac{\text{tarjetas amarillas}}{\text{faltas} + 0.01}
-$$
-
-* **Eficiencia de gol**
-
-$$
-\text{eficiencia_gol} = \frac{\text{goles totales}}{\text{remates a puerta} + 0.01}
-$$
-
-* **Ratio córners/posesión**
-
-$$
-\text{ratio_corners} = \frac{\text{córneres}}{\text{posesión} + 0.01}
-$$
-
----
+| Variable | Fórmula (texto) | Descripción |
+|---|---|---|
+| Ratio goles/posesión | `ratio_goles_posesion = goles_totales / (posesion + 0.01)` | Mide la efectividad ofensiva por unidad de posesión. |
+| Ratio tarjetas/faltas | `ratio_tarjetas = tarjetas_amarillas / (faltas + 0.01)` | Indica la disciplina o agresividad del equipo. |
+| Eficiencia de gol | `eficiencia_gol = goles_totales / (remates_a_puerta + 0.01)` | Porcentaje de remates que se convierten en gol. |
+| Ratio córners/posesión | `ratio_corners = corners / (posesion + 0.01)` | Capacidad de generar peligro en ataque. |
+> **Nota:** Se añade `+0.01` al denominador para evitar divisiones por cero y estabilizar las características.
 
 ### 3. Modelo XGBoost (Clasificación)
 
@@ -176,22 +159,37 @@ La frecuencia de clasificación en las simulaciones define la probabilidad final
 
 ---
 
+## 5. Evaluación del modelo
+
+### Precisión (Accuracy)
+
+$$ \text{Accuracy} = \frac{1}{N} \sum_{i=1}^{N} \mathbf{1}\left(\hat{y}_i = y_i\right) $$
+
+### Pérdida logarítmica (Log‑Loss)
+
+$$ \text{LogLoss} = -\frac{1}{N} \sum_{i=1}^{N} \log\left(P(Y = y_i \mid \mathbf{x}_i)\right) $$
+
 ## 📂 Estructura del Repositorio
 
 ```
-📁 Simulaciones_Mundial/
-├── 📄 Cruces_4tos.csv
-├── 📄 datos_historicos.csv
-├── 📄 datos_mundial.csv
-├── 📄 ranking_fifa.csv
-├── 📄 transfermarkt.csv
-├── 📄 detalle_simulacion_torneo.csv
-├── 📄 Grupos_Mundial.csv
-├── 📄 partidos_mundial.csv
-├── 📁 modelos/
-│   ├── best_model_xgb.pkl
-│   └── scaler_xgb.pkl
-└── 📄 prediccion_cuartos.py
+├── 📁 01_Scraping
+├── 📁 02_Limpieza_Datos
+├── 📁 03_Modelo_Simulacion
+├── 📁 04_Web
+├── 📁 Data
+│    ├── 📄 Cruces_4tos.csv
+│    ├── 📄 Grupos_Mundial.csv
+│    ├── 📄 partidos_mundial.csv
+│    ├── 📄 ranking_fifa.csv
+│    ├── 📄 transfermarkt.csv
+│    └──  ...
+├── 📁 Modelo_XGBoost_4tos/
+│   ├── 📄 Resultados_Equipos_Clasificados_4tos
+    ├── 📄 Codigo_Modelo_XGBoost.py
+    ├── 📄 Calculos_Modelo_XGBoost
+│   └── 📄 Descripcion_Modelo_XGBoost
+├── 📄 Observaciones_Modelo_XGBoost
+└── 📄 README.md
 ```
 
 ---
